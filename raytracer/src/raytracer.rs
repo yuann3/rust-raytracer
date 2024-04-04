@@ -149,7 +149,7 @@ fn ray_color(
                     Some((pixels, width, height, _)) => {
                         let x = (u * (*width - 1) as f32) as usize;
                         let y = ((1.0 - t) * (*height - 1) as f32) as usize;
-                        let pixel_red = &pixels[(y * *width + x) * 3];
+                        let pixel_red = &pixels[(y * *width + x) * 3 + 0];
                         let pixel_green = &pixels[(y * *width + x) * 3 + 1];
                         let pixel_blue = &pixels[(y * *width + x) * 3 + 2];
                         return Srgb::new(
@@ -273,6 +273,7 @@ fn test_render_full_test_scene() {
     scene.height = 60;
     render("/tmp/test_scene.png", scene);
 }
+
 
 #[test]
 fn test_render_full_cover_scene() {

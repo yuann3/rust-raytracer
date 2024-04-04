@@ -42,6 +42,8 @@ fn u_v_from_sphere_hit_point(hit_point_on_sphere: Point3D) -> (f64, f64) {
     (u, v)
 }
 
+
+
 impl Hittable for Sphere {
     fn hit(&self, ray: &Ray, t_min: f64, t_max: f64) -> Option<HitRecord> {
         let oc = ray.origin - self.center;
